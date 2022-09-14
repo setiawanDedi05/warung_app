@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:warung_app/pages/add_barang_page.dart';
-import 'package:warung_app/pages/detail_barang_page.dart';
 import 'package:warung_app/pages/searching_page.dart';
 import 'package:warung_app/pages/splash.dart';
 import 'package:warung_app/providers/barang.dart';
@@ -29,8 +28,8 @@ class MyApp extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 home: HomePage(),
                 routes: {
+                  HomePage.routeName: (context) => HomePage(),
                   AddBarang.routeName: (context) => AddBarang(),
-                  DetailBarang.routeName: (context) => DetailBarang(),
                   SearchingPage.routeName: (context) => SearchingPage(),
                 },
               ),

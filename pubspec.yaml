@@ -41,6 +41,7 @@ dependencies:
   firestore_search: ^0.1.9
   intl: ^0.17.0
   provider: ^5.0.0
+  top_snackbar_flutter: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +67,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

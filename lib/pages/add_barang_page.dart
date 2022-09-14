@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
+import 'package:warung_app/pages/home_page.dart';
 
 import '../providers/barang.dart';
 
@@ -26,22 +29,16 @@ class _AddBarangState extends State<AddBarang> {
           IconButton(
             icon: const Icon(Icons.save),
             onPressed: () {
-              barang
-                  .addBarang(
-                namaBarangController.text,
-                kategoriController.text,
-                double.parse(hargaController.text),
+              barang.addBarang(namaBarangController.text,
+                  kategoriController.text, double.parse(hargaController.text));
+              showTopSnackBar(
                 context,
-              )
-                  .then((value) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Berhasil ditambahkan"),
-                    duration: Duration(seconds: 2),
-                  ),
-                );
-                Navigator.pop(context);
-              });
+                const CustomSnackBar.success(
+                  message: "Data Bertambah",
+                ),
+              );
+              Navigator.pop(context);
+              Navigator.pushNamed(context, HomePage.routeName);
             },
           ),
         ],
@@ -71,22 +68,18 @@ class _AddBarangState extends State<AddBarang> {
                 textInputAction: TextInputAction.done,
                 controller: hargaController,
                 onEditingComplete: () {
-                  barang
-                      .addBarang(
-                    namaBarangController.text,
-                    kategoriController.text,
-                    double.parse(hargaController.text),
+                  barang.addBarang(
+                      namaBarangController.text,
+                      kategoriController.text,
+                      double.parse(hargaController.text));
+                  showTopSnackBar(
                     context,
-                  )
-                      .then((value) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text("Berhasil ditambahkan"),
-                        duration: Duration(seconds: 2),
-                      ),
-                    );
-                    Navigator.pop(context);
-                  });
+                    const CustomSnackBar.success(
+                      message: "Data Bertambah",
+                    ),
+                  );
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, HomePage.routeName);
                 },
               ),
               const SizedBox(height: 50),
@@ -95,22 +88,17 @@ class _AddBarangState extends State<AddBarang> {
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
                   onPressed: () {
-                    barang
-                        .addBarang(
-                      namaBarangController.text,
-                      kategoriController.text,
-                      double.parse(hargaController.text),
+                    barang.addBarang(
+                        namaBarangController.text,
+                        kategoriController.text,
+                        double.parse(hargaController.text));
+                    showTopSnackBar(
                       context,
-                    )
-                        .then((value) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("Berhasil ditambahkan"),
-                          duration: Duration(seconds: 2),
-                        ),
-                      );
-                      Navigator.pop(context);
-                    });
+                      const CustomSnackBar.success(
+                        message: "Data Bertambah",
+                      ),
+                    );
+                    Navigator.pushNamed(context, HomePage.routeName);
                   },
                   child: const Text(
                     "Submit",

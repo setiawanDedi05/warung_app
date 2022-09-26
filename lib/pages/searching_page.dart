@@ -11,14 +11,17 @@ class SearchingPage extends StatefulWidget {
 
 class _SearchingPageState extends State<SearchingPage> {
   @override
+  @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: AppBar(
             title: FirestoreSearchBar(
           tag: 'searchBar',
+          searchTextColor: Colors.white,
+          searchTextHintColor: Colors.white,
+          searchBodyBackgroundColor: Colors.white54,
         )),
-        body: FirestoreSearchResults.builder(
+        body: FirestoreSearchResults?.builder(
           tag: 'searchBar',
           firestoreCollectionName: 'barang',
           searchBy: 'nama_barang',
@@ -40,8 +43,7 @@ class _SearchingPageState extends State<SearchingPage> {
                   final Barang data = dataList[index];
                   return ListTile(
                     leading: CircleAvatar(
-                      child:
-                          Image.asset("assets/images/logo_kecil_putih.png"),
+                      child: Image.asset("assets/images/logo_kecil_putih.png"),
                     ),
                     title: Text(
                       data.nama_barang!,

@@ -1,0 +1,24 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+
+
+		{
+			"name": "Current Device",
+			"request": "launch",
+			"type": "dart"
+		},
+		{
+			"name": "iPhone",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "25BA585D-8B6B-4192-BBBC-3062264F6C4E"
+		},
+	],
+	"compounds": [
+		{
+			"name": "All Devices",
+			"configurations": ["iPhone"],
+		}
+	]
+}
